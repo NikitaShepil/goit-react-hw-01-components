@@ -1,9 +1,10 @@
 
 import css from "./statistics.module.css"
 import PropTypes from 'prop-types';
-export  function Statistics ({data}) {
+import { getRandomColor } from './radColor'
+export  function Statistics ({ title,  data}) {
     return <section className={css.statistics}>
-    <h2 className={css.title}>Upload stats</h2>
+    <h2 className={css.title}>{title}</h2>
   
     <ul className={css.statsList}>
   
@@ -18,12 +19,7 @@ export  function Statistics ({data}) {
   </section>
   }
 
-  function getRandomColor() {
-  const r = Math.floor(Math.random() * 256); // Випадкове значення для червоного каналу (0-255)
-  const g = Math.floor(Math.random() * 256); // Випадкове значення для зеленого каналу (0-255)
-  const b = Math.floor(Math.random() * 256); // Випадкове значення для синього каналу (0-255)
-  return `rgb(${r}, ${g}, ${b})`; // Повертаємо значення у форматі RGB
-}
+  
 
 
 Statistics.propTypes = {
